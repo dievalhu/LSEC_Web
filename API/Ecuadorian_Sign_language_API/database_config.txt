@@ -1,0 +1,3 @@
+USER=Ecuadorian_Sign_Language
+PWD=tesis.root
+DB_NAME=ecuadorian_Sign_Language

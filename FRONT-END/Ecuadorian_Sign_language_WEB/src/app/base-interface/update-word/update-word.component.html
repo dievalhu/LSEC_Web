@@ -1,0 +1,73 @@
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="container-fluid h-100">
+        <div class="row h-100">
+            
+            <!-- Panel izquierdo -->
+            <div class="col-md-6 p-5 bg-dark text-light d-flex flex-column justify-content-center align-items-center">
+                <h2 class="my-4">EcuSign</h2>
+                <img src="assets/icons/icons8_Sign_Language_100px.png" alt="EcuSign" class="img-fluid mb-4">
+                <h4 class="my-4">Configuración de Gif</h4>
+            </div>
+            
+            <!-- Panel derecho -->
+            <div class="col-md-6 p-5">
+                <h2 class="text-dark mb-4">Actualizar Gif</h2>
+                
+                <form>
+                    <!-- Sección Tipo (Palabra o Carácter) -->
+                    <div class="mb-3">
+                        <label for="type" class="form-label">Tipo</label>
+                        <select class="form-control" id="type" [(ngModel)]="selectedType" name="type" (change)="onTypeChange()">
+                            <option value="palabra">Palabra</option>
+                            <option value="caracter">Carácter</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Sección Palabra o Carácter -->
+                    <div class="mb-3">
+                        <label for="wordname" class="form-label">
+                            <img src="assets/icons/icons8_Dictionary_20px.png" alt="Icono de Palabra"> Palabra/Carácter
+                        </label>
+                        <select class="form-control" [(ngModel)]="selectedWord" name="selectedWord" (change)="onWordChange()">
+                            <option *ngFor="let item of itemList" [value]="item">{{item}}</option>
+                        </select>
+                        <label for="toTextInput" class="form-label">A:</label>
+                        <input class="form-control" type="text" id="toTextInput" [(ngModel)]="toText" name="toText" placeholder="Nuevo nombre">
+                    </div>
+                    
+                    <!-- Sección Descripción -->
+                    <div class="mb-3">
+                        <label for="description" class="form-label">
+                          <img src="assets/icons/icons8_Comments_20px.png" alt="Icono de Descripción"> Descripción
+                        </label>
+                        <input type="text" class="form-control" id="description" 
+                            [(ngModel)]="selectedDescription" [readonly]="selectedType === 'caracter'"
+                            name="description">
+                    </div>
+                    <video *ngIf="selectedGifPath" controls [src]="selectedGifPath" class="video-preview"></video>
+
+                    <!-- Sección para mostrar el nombre del GIF -->
+                    <div class="mb-3">
+                        <label for="gifPath" class="form-label">
+                            <img src="assets/icons/icons8_GIF_20px.png" alt="Icono de Gif"> Gif
+                        </label>
+                        <div class="mb-3">                            
+                            <input type="file" class="form-control" id="uploadVideo" (change)="onFileSelected($event)" name="uploadVideo" accept=".webm">
+                        </div>
+                    </div>
+                    
+                    <!-- Acciones: Editar, Cancelar, Actualizar, Buscar GIF -->
+                    <div class="d-flex justify-content-between">
+                        <button type="button" class="btn btn-primary" (click)="updateVideo()">
+                            <img src="assets/icons/icons8_Edit_20px_2.png" alt="Icono de Editar"> Actualizar Gif
+                        </button>                        
+                        <button type="button" class="btn btn-warning" (click)="onCancelClick()">
+                            <img src="assets/icons/icons8_Cancel_20px.png" alt="Icono Cancelar"> Cancelar
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

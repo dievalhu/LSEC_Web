@@ -1,0 +1,65 @@
+/* Estilos para el video */
+video {
+    width: 250px; /* Tamaño predeterminado del video */
+    height: auto; /* Altura automática */
+    object-fit: cover; /* Esto asegura que el video cubra el espacio definido sin distorsionarse */
+  
+    /* Aplicar tamaño menor en pantallas más pequeñas */
+    @media (max-width: 768px) {
+      width: 100%; /* Ajustar al 100% del ancho del contenedor */
+      max-width: 250px; /* Limitar el ancho máximo a 250px */
+    }
+  }
+  
+  /* Estilos para el nombre del video dentro del cuadro del video */
+  .video-caption {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    color: #fff;  /* Color del texto */
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 2em; /* Tamaño de texto grande */
+  }
+  
+  /* Panel de fondo */
+  .bg-dark {
+    background-color: rgb(54, 33, 89) !important;
+  }
+  
+  /* Estilos de texto */
+  .text-light {
+    color: rgb(204, 204, 204) !important;
+  }
+  
+  .text-dark {
+    color: rgb(54, 33, 89) !important;
+  }
+  
+  /* Iconos y etiquetas */
+  .form-label img {
+    margin-right: 10px;
+  }
+  
+  /* Botón */
+  .btn-primary {
+    background-color: rgb(54, 33, 89) !important;
+    border-color: rgb(54, 33, 89) !important;
+  }
+  
+  .btn-primary:hover {
+    background-color: rgb(74, 53, 109) !important;
+    border-color: rgb(74, 53, 109) !important;
+  }
+  
+  .gif-image {
+    width: 100%;     /* Ocupa todo el espacio disponible */
+    max-width: 250px; /* Ancho máximo de 250px */
+    height: auto;    /* Se ajustará proporcionalmente al ancho */
+    max-height: 250px; /* Altura máxima de 250px */
+    display: block;  /* Para centrar usando margin */
+    margin: 0 auto;  /* Centra horizontalmente */
+  }
+  

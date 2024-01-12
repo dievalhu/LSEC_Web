@@ -1,0 +1,21 @@
+# Utiliza la imagen oficial de MySQL como base
+FROM mysql:5.7
+
+# Variables de entorno para configurar la base de datos
+ENV MYSQL_DATABASE=ecuadorian_Sign_Language_base
+ENV MYSQL_USER=ecuadorian_Sign_Language_user
+ENV MYSQL_PASSWORD=tesisroot
+ENV MYSQL_ROOT_PASSWORD=tesisroot
+
+# Copia los archivos SQL al contenedor
+COPY init.sql /docker-entrypoint-initdb.d/
+COPY sqlbase.sql /docker-entrypoint-initdb.d/
+
+# Configura la codificación y el conjunto de caracteres
+ENV LANG C.UTF-8
+
+# Expone el puerto MySQL (3306) para que se pueda acceder desde fuera del contenedor
+EXPOSE 3306
+
+# Ejecuta el comando de inicio del contenedor de MySQL
+CMD ["mysqld"]
