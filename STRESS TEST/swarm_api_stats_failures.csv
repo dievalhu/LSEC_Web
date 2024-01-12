@@ -1,4 +1,0 @@
-Method,Name,Error,Occurrences
-GET,/logic/database_config,RemoteDisconnected('Remote end closed connection without response'),3
-GET,/crud/palabra/,RemoteDisconnected('Remote end closed connection without response'),2
-POST,/logic/analyze-text-videos/,RemoteDisconnected('Remote end closed connection without response'),7
