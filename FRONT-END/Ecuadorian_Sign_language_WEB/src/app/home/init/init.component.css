@@ -1,0 +1,127 @@
+/* Estilos específicos para InitComponent */
+.app-init .container-fluid {
+  display: flex;
+}
+
+.app-init .text-enlarged {
+  font-size: 1em;
+}
+
+.app-init .bg-dark {
+  background-color: rgb(54, 33, 89) !important;
+}
+
+.app-init h2 {
+  font-size: 3em !important;
+  border-bottom: 2px solid #FFFFFF !important;
+  padding-bottom: 10px !important;
+  margin-bottom: 10px !important;
+}
+
+.app-init .menu-item {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.app-init .menu-item img {
+  margin-right: 10px;
+}
+
+.app-init .main-panel {
+  flex: 1;
+  padding: 20px;
+}
+
+.app-init .header {
+  background-color: #6E59DE;
+  padding: 10px 20px;
+  color: #CCC;
+  border-radius: 5px;
+}
+
+.app-init textarea {
+  width: 100%;
+  height: 100px;
+  margin-top: 20px;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.app-init .action-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.app-init .gif-display {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+}
+
+.app-init .gif-display img {
+  width: 100%;
+  height: auto;
+}
+
+.app-init .carousel-inner .carousel-item {
+  transition: transform 1s ease;
+}
+
+.app-init .gif-name-container {
+  background-color: purple;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+/* Ajustar el tamaño de las imágenes dentro de ng-image-slider */
+ng-image-slider img {
+  width: 400%;  /* Ajusta según tus necesidades */
+  height: auto;
+}
+
+/* Estilos para el video contenedor */
+.video-display {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  max-height: 100vh;
+}
+
+/* Estilos para el video */
+video {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* Estilos para el nombre del video dentro del cuadro del video */
+.video-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 5px 0;
+  text-align: center;
+  font-size: 2em;
+}
+
+/* Restringe aún más la altura máxima en pantallas más pequeñas si es necesario */
+@media (max-width: 768px) {
+  video {
+    max-height: 80vh;
+  }
+}
+
+.current-letter {
+  text-decoration: underline;
+}

@@ -1,0 +1,24 @@
+<div class="login-container">
+  <h2>{{ data.title }}</h2>
+  <p>{{ data.message }}</p>
+
+  <!-- Formulario de login -->
+  <div *ngIf="data.isLoginForm" class="login-form">
+    <form (submit)="login()"> <!-- Asumiendo que usas Angular y quieres ejecutar la función "login" cuando se envía el formulario -->
+      <div class="input-group">
+          <label>Email:</label>
+          <input type="email" [(ngModel)]="loginEmail" name="loginEmail" placeholder="Ingrese su email" autocomplete="email">
+      </div>
+      
+      <div class="input-group">
+          <label>Contraseña:</label>
+          <input type="password" [(ngModel)]="loginPassword" name="loginPassword" placeholder="Ingrese su contraseña" autocomplete="current-password">
+
+      </div>
+
+      <button class="btn-login" type="submit">Iniciar sesión</button>
+    </form>
+  </div>
+
+  <button class="btn-close" (click)="closeDialog()"></button> <!-- Cambié el texto del botón a "Cerrar" para que sea más claro -->
+</div>
